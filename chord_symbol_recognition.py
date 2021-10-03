@@ -102,13 +102,13 @@ def comput_PRF_with_pre(TP, FP, FN):
     F1 = tf.cond(tf.is_nan(F1), lambda: tf.constant(0.0), lambda: F1)
     return precision, recall, F1
 
-def train_HT(hp):
+def train_HT(hp, train_data, test_data):
     print('Run HT chord recognition on %s-%d...' % (hp.dataset, hp.test_set_id))
     tquality_dict = {'M': 0, 'm': 1, 'O': 2, 'pad': 3}  # 'O' stands for 'others'
     root_dict = {'C': 0, 'C+': 1, 'D': 2, 'D+': 3, 'E': 4, 'F': 5, 'F+': 6, 'G': 7, 'G+': 8, 'A': 9, 'A+': 10, 'B': 11, 'pad': 12}
  
     # Load training and testing data
-    train_data, test_data = load_data_symbol(dir=hp.dataset + 'BPS_FH_preprocessed_data_MIREX_Mm.pickle', test_set_id=hp.test_set_id, sequence_with_overlap=hp.train_sequence_with_overlap)
+    # train_data, test_data = load_data_symbol(dir=hp.dataset + 'BPS_FH_preprocessed_data_MIREX_Mm.pickle', test_set_id=hp.test_set_id, sequence_with_overlap=hp.train_sequence_with_overlap)
 
     print(train_data['tchord'].shape)
 
