@@ -1,5 +1,6 @@
 import numpy as np
-import tensorflow as tf # version = 1.8.0
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
 import time
 import random
 import math
