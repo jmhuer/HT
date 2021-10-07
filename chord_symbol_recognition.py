@@ -122,7 +122,7 @@ def train_HT(hp, train_data, test_data):
     print(hp)
  
     with tf.name_scope('placeholder'):
-        x_p = tf.placeholder(tf.int32, [None, hp.n_steps, 88], name="pianoroll")
+        x_p = tf.placeholder(tf.int32, [None, hp.n_steps, 360], name="pianoroll")
         x_len = tf.placeholder(tf.int32, [None], name="seq_lens")
         y_tc = tf.placeholder(tf.int32, [None, hp.n_steps], name="tchord")
         y_cc = tf.placeholder(tf.int32, [None, hp.n_steps], name="chord_change")
