@@ -157,7 +157,7 @@ def train_HT(hp, train_data, test_data):
 
     with tf.name_scope('loss'):
         # encoder loss
-        loss_ae =  0.5* tf.reduce_mean(tf.pow(x_in - encoded, 2))
+        loss_ae =  4.0* tf.reduce_mean(tf.pow(x_in - encoded, 2))
         print("loss ae", loss_ae)
 
         # Chord change
